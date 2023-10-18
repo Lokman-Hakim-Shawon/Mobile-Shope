@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom";
 import Navbar from "../components/navbar";
-// import { useContext, useState } from "react";
-// import { AuthContext } from "../components/Authprovider";
+import { useContext, useState } from "react";
+import { AuthContext } from "../components/Authprovider";
 
 const Login = () => {
-  // const {signin}=useContext(AuthContext)
-  // const [errors,seterrors]=useState(null)
+  const {login}=useContext(AuthContext)
+  const [errors,seterrors]=useState(null)
   const handleSignin=event=>{
     event.preventDefault()
     const form=event.target
@@ -13,19 +13,19 @@ const Login = () => {
     const password=form.password.value
     console.log(email,password)
     // seterrors(null)
-    // signin(email,password)
-    // .then(result=>{
-    //   if(result){
-    //     console.log('signin successfull',result)
-    //     seterrors('Login successfull')
-    //   }
-    // })
-    // .catch(error=>{
-    //   if(error){
-    //     console.log('error : ',error)
-    //     seterrors('Invalid email and password')
-    //   }
-    // })
+    login(email,password)
+    .then(result=>{
+      if(result){
+        console.log('signin successfull',result)
+        seterrors('Login successfull')
+      }
+    })
+    .catch(error=>{
+      if(error){
+        console.log('error : ',error)
+        seterrors('Invalid email and password')
+      }
+    })
   }
     return (
         <div>
@@ -47,12 +47,12 @@ const Login = () => {
           <label className="label">
             <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
           </label>
-          {/* { 
+          { 
              errors==='Login successfull' ?
             <p className="text-green-600">{errors}</p>
             :
             <p className="text-red-600">{errors}</p>
-          } */}
+          }
         </div>
         <div className="form-control mt-6">
           <button className="btn btn-primary">Login</button>

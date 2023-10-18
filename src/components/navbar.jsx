@@ -1,8 +1,18 @@
 import { Link } from 'react-router-dom';
 import img from '../../public/images/download.jfif'
+import { useContext } from 'react';
+import { AuthContext } from './Authprovider';
 
 const Navbar = () => {
- 
+      const {user,logOut}=useContext(AuthContext)
+     
+      const handlelogout=()=>{
+          logOut()
+          .then(result=>{
+            console.log(result)
+          })
+          .catch(error=>console.log(error))
+      }
     const navlink=<>
         <Link to='/'><li>Home</li></Link>
         <Link to='/add_products'><li>Add Products</li></Link>
@@ -32,14 +42,24 @@ const Navbar = () => {
     <ul className="menu menu-horizontal px-1 space-x-20">
       {navlink}
     </ul>
+    {/* <p>{user.displayName}</p> */}
   </div>
   <div className="navbar-end">
+    {
+      user?
+      <button className="btn" onClick={handlelogout}>
+    <img src={img} className="h-6 w-6" stroke="currentColor" />
+    Log Out
+  </button>  
+      :
     <Link to='/login'>
     <button className="btn">
     <img src={img} className="h-6 w-6" stroke="currentColor" />
     Login
   </button>
     </Link>
+
+    }
   
   </div>
 </div>
