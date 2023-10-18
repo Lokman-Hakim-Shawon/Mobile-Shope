@@ -1,12 +1,15 @@
+import { Link } from 'react-router-dom';
 import img from '../../public/images/download.jfif'
+
 const Navbar = () => {
+ 
     const navlink=<>
-        <li>Home</li>
-        <li>Add poducts</li>
-        <li>MY cart</li>
+        <Link to='/'><li>Home</li></Link>
+        <Link to='/add_products'><li>Add Products</li></Link>
+        <Link to='/my_cart'><li>My Cart</li></Link>
     </>
     return (
-        <div>
+        <div className='py-5'>
             <div className="navbar bg-base-100">
   <div className="navbar-start">
     <div className="dropdown">
@@ -31,11 +34,13 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-  <button className="btn">
-  {/* */}
-  <img src={img} className="h-6 w-6" stroke="currentColor" />
-  Login
-</button>
+    <Link to='/login'>
+    <button className="btn">
+    <img src={img} className="h-6 w-6" stroke="currentColor" />
+    Login
+  </button>
+    </Link>
+  
   </div>
 </div>
         </div>
