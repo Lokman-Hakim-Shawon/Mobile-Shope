@@ -15,7 +15,7 @@ const AddProducts = () => {
     const rating=form.rating.value
     const user={image,name,type,price,des,rating}   
     console.log(user)
-    fetch('http://localhost:5000/add_products',{
+    fetch(' https://database-10-j5bpzuqd6-lokman-hakim-shawon.vercel.app/add_products',{
       method:"POST",
       headers:{
         "content-type":"application/json"
