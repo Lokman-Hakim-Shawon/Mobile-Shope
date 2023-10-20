@@ -9,10 +9,11 @@ const Navbar = () => {
       const handlelogout=()=>{
           logOut()
           .then(result=>{
-            console.log(result)
+            console.log(result.user)
           })
           .catch(error=>console.log(error))
       }
+      
     const navlink=<>
         <Link to='/'><li>Home</li></Link>
         <Link to='/add_products'><li>Add Products</li></Link>
@@ -48,7 +49,17 @@ const Navbar = () => {
     {
       user?
       <button className="btn" onClick={handlelogout}>
-    <img src={img} className="h-6 w-6" stroke="currentColor" />
+    {
+      user ? 
+      <img src={user.photoURL} className="h-6 w-6" stroke="currentColor" />
+      :
+      <img src={img} className="h-6 w-6" stroke="currentColor" />
+
+    }
+    {
+      user && 
+      <p>{user.displayName}</p>
+    }
     Log Out
   </button>  
       :

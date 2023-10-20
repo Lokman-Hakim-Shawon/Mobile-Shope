@@ -1,4 +1,6 @@
 import Navbar from "../components/navbar";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddProducts = () => {
   const handlecard=event=>{
@@ -22,6 +24,9 @@ const AddProducts = () => {
     })
     .then(res=>res.json())
     .then(data=>console.log(data))
+    if(user){
+       toast("Data added successfull")
+    }
   }
     return (
         <div>
@@ -75,6 +80,7 @@ const AddProducts = () => {
       </form>
     </div>
 </div>
+<ToastContainer />
         </div>
     );
 };

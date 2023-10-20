@@ -1,10 +1,12 @@
 import Navbar from "../components/navbar";
 
 const MyCart = () => {
+    // const {name,des}=datas
     return (
         <div>
             <Navbar></Navbar>
-            <h1>my cart</h1>
+            <h1></h1>
+            <h1></h1>
         </div>
     );
 };

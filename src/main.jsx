@@ -14,6 +14,7 @@ import Login from './pages/Login';
 import Register from './pages/Register';
 import Authprovider from './components/Authprovider';
 import PrivateRout from './components/privaterout';
+import ShowBrandCards from './pages/showbrandcards';
 // import Authprovider from './components/Authprovider';
 
 const router = createBrowserRouter([
@@ -24,6 +25,12 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
+        loader:()=>fetch('http://localhost:5000/add_products')
+      },
+      {
+        path:'/brand_card/:id',
+        element:<PrivateRout><ShowBrandCards></ShowBrandCards></PrivateRout>,
+        loader:()=>fetch(`http://localhost:5000/add_products`)
       },
       {
         path:'/add_products',
