@@ -1,6 +1,6 @@
 // import { useLoaderData } from "react-router-dom";
 // import { useLoaderData} from "react-router-dom";
-import { useLoaderData, useLocation } from "react-router-dom";
+import { Link, useLoaderData, useLocation } from "react-router-dom";
 import Navbar from "../components/navbar";
 import { PropTypes } from 'prop-types';
 // import MyCart from "./MyCart";
@@ -30,9 +30,9 @@ const ShowBrandCards = () => {
                               <p>model : {datas.type}</p>
                               <p>{datas.des}</p>
                               <p>{datas.rating}</p>
-                              <p>Price : {datas.price}</p>
+                              <p>Price : {datas.price} TK</p>
                               <div className="card-actions">
-                                <button className="btn bg-black text-white font-bold">Show Details</button>
+                                <Link to={`/show_details/${datas.name}`} state={datas}><button className="btn bg-black text-white font-bold">Show Details</button></Link>
                               </div>
                             </div>
                           </div>

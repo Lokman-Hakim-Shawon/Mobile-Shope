@@ -15,6 +15,7 @@ import Register from './pages/Register';
 import Authprovider from './components/Authprovider';
 import PrivateRout from './components/privaterout';
 import ShowBrandCards from './pages/showbrandcards';
+import Showdetails from './pages/showdetails';
 // import Authprovider from './components/Authprovider';
 
 const router = createBrowserRouter([
@@ -38,7 +39,8 @@ const router = createBrowserRouter([
       },
       {
         path:'/my_cart',
-        element:<PrivateRout><MyCart></MyCart></PrivateRout>
+        element:<PrivateRout><MyCart></MyCart></PrivateRout>,
+        loader:()=>fetch('http://localhost:5000/add_products')
       }
     ]
   },
@@ -49,6 +51,10 @@ const router = createBrowserRouter([
   {
     path:'/register',
     element:<Register></Register>
+  },
+  {
+    path:'/show_details/:id',
+    element:<Showdetails></Showdetails>
   }
 ]);
 

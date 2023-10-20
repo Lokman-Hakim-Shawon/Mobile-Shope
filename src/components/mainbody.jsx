@@ -15,10 +15,10 @@ const Mainbody = () => {
                  </figure>
                <div className="card-body">
                    <h2 className="card-title">{datas.name}</h2>
-                   <p>Type: {datas.type}</p>
+                   <p>Model: {datas.type}</p>
                  <p>{datas.des}</p>
                  <p>{datas.rating}</p>
-                 <p>Price: {datas.price}</p>
+                 <p>Price: {datas.price} TK</p>
                    <div className="card-actions">
                     <Link to={`/brand_card/${datas.name}`} state={datas.name}>
                        <button className="btn bg-black text-white font-bold">
