@@ -26,12 +26,12 @@ const router = createBrowserRouter([
       {
         path:'/',
         element:<Home></Home>,
-        loader:()=>fetch(' https://database-10-j5bpzuqd6-lokman-hakim-shawon.vercel.app/add_products')
+        loader:()=>fetch('https://database-10-e9f6tq1ap-lokman-hakim-shawon.vercel.app/add_products')
       },
       {
         path:'/brand_card/:id',
         element:<PrivateRout><ShowBrandCards></ShowBrandCards></PrivateRout>,
-        loader:()=>fetch(` https://database-10-j5bpzuqd6-lokman-hakim-shawon.vercel.app/add_products`)
+        loader:()=>fetch(`https://database-10-e9f6tq1ap-lokman-hakim-shawon.vercel.app/add_products`)
       },
       {
         path:'/add_products',
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       {
         path:'/my_cart',
         element:<PrivateRout><MyCart></MyCart></PrivateRout>,
-        loader:()=>fetch(' https://database-10-j5bpzuqd6-lokman-hakim-shawon.vercel.app/add_products')
+        loader:()=>fetch('https://database-10-e9f6tq1ap-lokman-hakim-shawon.vercel.app/add_products')
       }
     ]
   },

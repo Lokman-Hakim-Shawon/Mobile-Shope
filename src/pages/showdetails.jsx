@@ -16,7 +16,7 @@ const Showdetails = () => {
     <p>{data.rating}</p>
     <p>Price : {data.price} TK</p>
     <div className="card-actions">
-      <button className="btn btn-primary">Buy Now</button>
+      <button className="btn bg-black text-white font-bold">Buy Now</button>
     </div>
   </div>
 </div>

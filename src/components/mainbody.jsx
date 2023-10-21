@@ -5,6 +5,7 @@ import { Link, useLoaderData } from 'react-router-dom';
 const Mainbody = () => {
   const data=useLoaderData()
   const [totalcard,settotalcard]=useState(6)
+  // settotalcard(6)
   return (
          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 my-10">
           {
